@@ -1,0 +1,37 @@
+1. 
+Số lượng các node: 2
+Thông tin chi tiết của từng node: 
+	Node Seq Scan on film: cost=0.00..69.00 rows=43 width=174
+	Node Sort: cost=70.17..70.27 rows=43 width=174
+Node nào được chạy đầu tiên: Seq Scan on film
+Trình tự thực hiện các node: Node Seq Scan on film -> Node Sort
+
+2. 
+Số lượng các node: 3
+Thông tin chi tiết của từng node: 
+	Node Seq Scan on film: cost=0.00..66.50 rows=191 width=6
+	Node HashAggregate: cost=67.46..67.52 rows=5 width=36
+	Node Sort: cost=67.58..67.59 rows=5 width=36
+Node nào được chạy đầu tiên: Seq Scan on film
+Trình tự thực hiện các node: Node Seq Scan on film -> Node HashAggregate -> Node Sort
+
+3. 
+Số lượng các node: 3
+Thông tin chi tiết của từng node: 
+	Node Seq Scan on film: cost=0.00..66.50 rows=191 width=6
+	Node HashAggregate: cost=67.93..68.02 rows=2 width=36
+	Node Sort: cost=68.03..68.04 rows=2 width=
+	36
+Node nào được chạy đầu tiên: Seq Scan on film
+Trình tự thực hiện các node: Node Seq Scan on film -> Node HashAggregate -> Node Sort
+
+4. 
+Số lượng các node: 5
+Thông tin chi tiết của từng node: 
+	Node Seq Scan on language: cost=cost=0.00..1.06 rows=6 width=88
+	Node Hash: cost=1.06..1.06 rows=6 width=88
+	Node Seq Scan on film: cost=0.00..66.50 rows=418 width=21
+	Node Hash Join: cost=1.14..69.51 rows=418 width=103
+	Node Sort: cost=87.71..88.75 rows=418 width=103
+Node nào được chạy đầu tiên: Seq Scan on film
+Trình tự thực hiện các node: Node Seq Scan on film -> Node Seq Scan on language->Node Hash -> Node Hash Join -> Node Sort
